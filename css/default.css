@@ -165,7 +165,7 @@ body {
     #note {
         float:none;
         width: 94%;
-        height: 430px;
+        height: 450px;
         margin: 50px auto;
     }
 
@@ -193,6 +193,47 @@ body {
 
     #love-u {
         margin: 30px auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px){
+    #note {
+        float:none;
+        width: 94%;
+        height: 500px;
+        margin: 50px auto;
+    }
+
+    #loveHeart {
+        width:100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: none;
+    }
+
+    #elapseClock .digit {
+        font-size: 20px
+    }
+
+    #words {
+        width: 100%;
+        left: 0;
+        top: 80px;
+        font-size: 1.5em;
+    }
+
+    #elapseClock {
+        text-align: center;
+    }
+
+    #messages {
+        text-align: center;
+    }
+
+    #love-u {
+        margin: 30px auto;
+        font-size: 0.8em;
         text-align: center;
     }
 }
