@@ -68,7 +68,7 @@
 	</div>
 	<script type="text/javascript">
 		var audio = document.getElementById('bgm');
-		$('html').one('touchstart', function () {
+		$('html').add("click", function () {
 			audio.play();
 		});
 		var offsetX = $("#loveHeart").width() / 2;
