@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>A Love Letter to Fionne</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('font/digital-7_mono.ttf') format("truetype");
+		}
+        @font-face {
+            font-family: Delius Swash Caps;
+            src: url('font/DeliusSwashCaps-Regular.ttf') format("truetype");
+        }
+        @font-face {
+            font-family: Great Vibes;
+            src: url('font/GreatVibes-Regular.ttf') format("truetype");
+        }
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="applicable-device"content="pc,mobile"/>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="note">
+				<div>
+					<h2>Hi Bae!</h2>
+					<p>Remember the first time I talked to you?</p>
+					<p>It was at 21st July 2020 after work, </p>
+					<p>I was so nervous at that time, </p>
+					<p>I couldn't even speak well, </p>
+					<p>but I am glad I had the courage to talk to you. </p>
+					<p>Can't wait to spend more time with you together. </p>
+					<p>Lets make wonderful memories together! </p>
+					<br>
+					<br>
+					Love You Bae
+				</div>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Fionne, we have been together for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="love-u">
+						Love u forever and ever.<br/>
+						<div class="signature">- Aaron</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2020, (8-1), 23);
+		together.setHours(9);
+		together.setMinutes(30);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#note").css("display", "none")
+		    document.execCommand("stop");
+		} else {
+            $("#note").typewriter();
+            if ($(window).width() < 767) {
+                setTimeout(function(){
+                    $("#note").fadeOut(2000, function () {
+                        showHeart();
+                    })
+                }, 35000);
+            }
+            else {
+                setTimeout(function () {
+                    startHeartAnimation();
+                }, 2000);
+            }
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 200);
+
+		}
+
+		function showHeart() {
+            $("#loveHeart").fadeIn(1000, function () {
+                startHeartAnimation();
+            });
+        }
+
+	</script>
+</body>
+</html>
