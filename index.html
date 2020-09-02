@@ -86,7 +86,7 @@
 		} else {
 			$("#note").typewriter();
 			if ($(window).width() < 767) {
-
+				screen.orientation.lock("portrait");
 				$("#note").click(function () {
 					if (!heartVisible) {
 						heartVisible = true;
